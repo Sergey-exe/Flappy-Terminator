@@ -14,11 +14,11 @@ public class Projectile : MonoBehaviour
         _rigidbody.velocity = transform.right * _speed;
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    EnemyMover enemy;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        EnemyMover enemy;
 
-    //    if(enemy = collision.GetComponent<EnemyMover>())
-    //        Collision?.Invoke(enemy, this);
-    //}
+        if (enemy = collision.GetComponent<EnemyMover>())
+            Collision?.Invoke(enemy, this);
+    }
 }
