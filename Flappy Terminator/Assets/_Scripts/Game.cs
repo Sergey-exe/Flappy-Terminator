@@ -5,7 +5,9 @@ public class Game : MonoBehaviour
     [SerializeField] private Bird _bird;
     [SerializeField] private BirdCollisionHandler _collisionHandler;
     [SerializeField] private EnemySpawner _enemySpawner;
-    [SerializeField] private PlayerProjectileSpawner _projectileSpawner;
+    [SerializeField] private PlayerProjectileSpawner _playerProjectileSpawner;
+    [SerializeField] private EnemyProjectileSpawner _enemyProjectileSpawner;
+    [SerializeField] private PointsCounter _pointsCounter;
     [SerializeField] private TimeChanger _timeChanger;
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private EndGameScreen _endScreen;
@@ -43,10 +45,12 @@ public class Game : MonoBehaviour
 
     private void RestartGame()
     {
-        PlayGame();
-        _endScreen.Close();
         _enemySpawner.Restart();
-        _projectileSpawner.Restart();
+        _playerProjectileSpawner.Restart();
+        _enemyProjectileSpawner.Restart();
         _bird.Restart();
+        _pointsCounter.Restart();
+        _endScreen.Close();
+        PlayGame();
     }
 }

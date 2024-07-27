@@ -1,1 +1,1 @@
-﻿public class ProjectileDestroyer : Destroyer<PlayerProjectileSpawner, Projectile> { }
+﻿public class ProjectileDestroyer : Destroyer<PlayerProjectileSpawner, ProjectileCollisionDetector> { }

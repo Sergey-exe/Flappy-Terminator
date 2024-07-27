@@ -11,9 +11,4 @@ public class Destroyer<T, K> : MonoBehaviour where T : Spawner<K> where K : Mono
         if (objectK = collision.GetComponent<K>())
             _spawner.Release(objectK);
     }
-
-    public void Release(K objectK)
-    {
-        _spawner.Release(objectK);
-    }
 }

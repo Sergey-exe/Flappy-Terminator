@@ -2,13 +2,14 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemyMover : Mover
+public class Enemy : Mover
 {
     [SerializeField] private float _jumpDelay;
+    [SerializeField] private Transform _firePoint;
 
     private Coroutine _coroutine;
 
-    private event UnityAction IsJump;
+    public event UnityAction<Transform> Fire;
 
     private void OnDisable()
     {
@@ -26,7 +27,7 @@ public class EnemyMover : Mover
         WaitForSeconds wait = new WaitForSeconds(_jumpDelay);
 
         Jump();
-        IsJump?.Invoke();
+        Fire?.Invoke(_firePoint);
 
         yield return wait;
 

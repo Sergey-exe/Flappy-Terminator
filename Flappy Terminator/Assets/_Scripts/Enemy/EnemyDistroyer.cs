@@ -1,4 +1,1 @@
-using System.Collections;
-using System.Collections.Generic;
-
-public class EnemyDestroyer : Destroyer<EnemySpawner, EnemyMover> { }
+public class EnemyDestroyer : Destroyer<EnemySpawner, Enemy> { }

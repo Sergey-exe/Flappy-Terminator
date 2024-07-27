@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(Collider2D))]
 public class Spawner<T> : MonoBehaviour where T : MonoBehaviour
 {
     [SerializeField] private T _prefab;
@@ -26,8 +27,8 @@ public class Spawner<T> : MonoBehaviour where T : MonoBehaviour
         _objectPool = new ObjectPool<T>
         (
             createFunc: () => Create(GetRandomPosition()),
-            actionOnGet: (spawnObject) => ActionOnGet(spawnObject),
-            actionOnRelease: (spawnObject) => ActionOnRelease(spawnObject),
+            actionOnGet: (spawnObject) => OnGet(spawnObject),
+            actionOnRelease: (spawnObject) => OnRelease(spawnObject),
             actionOnDestroy: (spawnObject) => Delete(spawnObject),
             collectionCheck: true,
             defaultCapacity: _poolCapacity,
@@ -48,13 +49,13 @@ public class Spawner<T> : MonoBehaviour where T : MonoBehaviour
         objectFromPool.gameObject.transform.position = transform.position;
     }
 
-    public virtual void ActionOnGet(T spawnObject)
+    public virtual void OnGet(T spawnObject)
     {
         spawnObject.gameObject.SetActive(true);
         _activeObjects.Add(spawnObject);
     }
 
-    public virtual void ActionOnRelease(T spawnObject)
+    public virtual void OnRelease(T spawnObject)
     {
         spawnObject.gameObject.SetActive(false);
         _activeObjects.Remove(spawnObject);

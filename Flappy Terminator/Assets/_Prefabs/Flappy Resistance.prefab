@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2128181819816551266}
   - component: {fileID: 2364528868789944857}
-  - component: {fileID: 7953764528032762726}
   m_Layer: 0
-  m_Name: Projectile Spawner
+  m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,27 +77,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.03650002, y: 0.013432292}
   m_EdgeRadius: 0
---- !u!114 &7953764528032762726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763017356303932696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8ead153681af45489c8e3c66a15e340, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 8158886301266225081, guid: 4f086bed919350b4da9eca364be8ffe0, type: 3}
-  _delay: 0
-  _minDelayOnSpawn: 0
-  _maxDelayOnSpawn: 0
-  _minCountObjectsInSpawn: 0
-  _maxCountObjectsInSpawn: 0
-  _poolCapacity: 50
-  _poolMaxSize: 50
-  _globalSpawn: 0
 --- !u!1 &3807057259944506997
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +89,7 @@ GameObject:
   - component: {fileID: 2410249585580573887}
   - component: {fileID: 6991475810015479327}
   - component: {fileID: 7026692970287669284}
-  - component: {fileID: 8718306749102740963}
+  - component: {fileID: 5551563608650504525}
   - component: {fileID: -1121894394280254938}
   m_Layer: 0
   m_Name: Flappy Resistance
@@ -260,7 +238,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8718306749102740963
+--- !u!114 &5551563608650504525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,7 +247,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3807057259944506997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3221c26892fd964fbaa74789ccc4015, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a8d1de49ee429643937a29804cc8ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: -5
@@ -279,6 +257,7 @@ MonoBehaviour:
   _maxRotationZ: -60
   _rigidbody: {fileID: 7026692970287669284}
   _jumpDelay: 1
+  _firePoint: {fileID: 2128181819816551266}
 --- !u!114 &-1121894394280254938
 MonoBehaviour:
   m_ObjectHideFlags: 0

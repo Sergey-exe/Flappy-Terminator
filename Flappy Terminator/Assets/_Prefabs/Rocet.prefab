@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 4000341013926012949}
   - component: {fileID: 8748234178325854065}
   - component: {fileID: 2015687492771793051}
+  - component: {fileID: -183128570183312505}
   - component: {fileID: 5749118486761442785}
+  - component: {fileID: 2452518915555966208}
   m_Layer: 0
   m_Name: Rocet
   m_TagString: Untagged
@@ -159,6 +161,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-183128570183312505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4164838957340785338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173f4abba4142ec4fb0df0766b8132c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5749118486761442785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +183,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3a8f483d3ca1b6459230d5debcefbfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2452518915555966208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4164838957340785338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8db9e6ec5377944bc09b9df8e30634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5

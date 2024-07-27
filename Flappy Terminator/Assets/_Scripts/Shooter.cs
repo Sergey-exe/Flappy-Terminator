@@ -1,22 +1,34 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    [SerializeField] private float _delay;
     [SerializeField] private PlayerProjectileSpawner _spawner;
     [SerializeField] private InputReader _inputReader;
-    [SerializeField] private bool _botShoot;
+
+    private Coroutine _coroutine;
 
     private void Update()
     {
-        if(_botShoot == false)
-            if (_inputReader.DownButtonSoot())
-                Shoot();
+        if (_inputReader.DownButtonSoot())
+            if (_coroutine == null)
+                _coroutine = StartCoroutine(ShootWithDelay());
     }
 
     public void Shoot()
     {
         _spawner.GetObjectFromPool(transform);
+    }
+
+    private IEnumerator ShootWithDelay()
+    {
+        WaitForSeconds wait = new WaitForSeconds(_delay);
+
+        Shoot();
+
+        yield return wait;
+
+        _coroutine = null;
     }
 }
